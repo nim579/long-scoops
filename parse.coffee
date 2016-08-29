@@ -68,5 +68,3 @@ class ProcessFile
 
 Promise.all [new ProcessFile('./data/1.csv'), new ProcessFile('./data/2.csv')]
 .then console.log, console.error
-
-# module.exports = ProcessFile
