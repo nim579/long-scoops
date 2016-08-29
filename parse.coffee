@@ -54,8 +54,8 @@ class ProcessFile
         return @_coder.geocode @data.map (p)-> return "Москва, #{p.address}"
 
     save: ->
-        lines = @data.map (p)-> return "#{p.id}\t#{p.address}\t#{p.found}\t#{p.long}\t#{p.lat}"
-        lines.unshift "#{@cols.id}\t#{@cols.address}\t#{@cols.found}\t#{@cols.long}\t#{@cols.lat}"
+        lines = @data.map (p)-> return "\"#{p.id}\",\"#{p.address}\",\"#{p.found}\",\"#{p.long}\",\"#{p.lat}\""
+        lines.unshift "\"#{@cols.id}\",\"#{@cols.address}\",\"#{@cols.found}\",\"#{@cols.long}\",\"#{@cols.lat}\""
         csv  = lines.join '\n'
         json = JSON.stringify places: @data, null, 4
 
